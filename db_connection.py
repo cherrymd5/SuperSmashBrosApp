@@ -39,7 +39,8 @@ def write_match(player, opponent, result):
         query = "INSERT INTO smash_match_history(match_time, update_time, player_name, opponent_name, result) VALUES (CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, %s, %s, %s);"
 
         cursor.execute(query, (player, opponent, result))
-        cursor.close()
+        connection.commit()
+        connection.close()
 
 
     except (Exception, psycopg2.Error) as error:
