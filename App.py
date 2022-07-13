@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Get Matchups 
 @app.route("/", methods=['GET'])
 def hello_world():
-    return "Hello, World! Whooo"
+    return "Welcome to Hunter's database"
 
 @app.route("/get-all-matches", methods=['GET'])
 def get_all_matches():
